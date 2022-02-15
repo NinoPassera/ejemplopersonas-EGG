@@ -21,17 +21,17 @@ public class CiudadController {
 
   @Autowired
   private CiudadService ciudadService;
-
-  @GetMapping("/list")
-  public String listarCiudades(Model model, @RequestParam(required = false) String q) {
-    if (q != null) {
-      model.addAttribute("ciudades", ciudadService.listAll(q));
-    } else {
-      model.addAttribute("ciudades", ciudadService.listAll());
-    }
-
-    return "ciudad-list";
-  }
+//
+//  @GetMapping("/list")
+//  public String listarCiudades(Model model, @RequestParam(required = false) String q) {
+//    if (q != null) {
+//      model.addAttribute("ciudades", ciudadService.listAll(q));
+//    } else {
+//      model.addAttribute("ciudades", ciudadService.listAll());
+//    }
+//
+//    return "ciudad-list";
+//  }
 
   @GetMapping("/form")
   public String crearCiudad(Model model, @RequestParam(required = false) String id) {
@@ -59,9 +59,9 @@ public class CiudadController {
     return "redirect:/ciudad/list";
   }
 
-  @GetMapping("/delete")
-  public String eliminarCiudad(@RequestParam(required = true) String id) {
-    ciudadService.deleteById(id);
-    return "redirect:/ciudad/list";
-  }
+//  @GetMapping("/delete")
+//  public String eliminarCiudad(@RequestParam(required = true) String id) {
+//    ciudadService.deleteById(id);
+//    return "redirect:/ciudad/list";
+//  }
 }

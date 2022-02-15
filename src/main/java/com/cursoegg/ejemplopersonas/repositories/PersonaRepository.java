@@ -11,11 +11,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona, String> {
     
-    @Query("select p from Persona p where p.nombre LIKE :q or p.apellido LIKE :q or p.edad LIKE :q or p.ciudad.nombre LIKE :q")
+    @Query("select p from Persona p where p.nombre LIKE :q or p.apellido LIKE :q or p.edad LIKE :q ")
     List<Persona> findAllByQ(@Param("q") String q);
     
-    @Query("select p from Persona p where p.ciudad.nombre = :q")
-    List<Persona> findAllByCiudad(@Param("q") String q);
+//    @Query("select p from Persona p where p.ciudad.nombre = :q")
+//    List<Persona> findAllByCiudad(@Param("q") String q);
     
     @Query("select p from Persona p where p.nombre = :nombre")
     Persona findByName(@Param("nombre") String nombre);

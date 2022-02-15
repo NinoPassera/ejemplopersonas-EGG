@@ -50,9 +50,9 @@ public class CiudadService {
     return ciudadRepository.findAll();
   }
 
-  public List<Ciudad> listAll(String q) {
-    return ciudadRepository.findAll("%" + q + "%");
-  }
+//  public List<Ciudad> listAll(String q) {
+//    return ciudadRepository.findAll("%" + q + "%");
+//  }
 
   public Ciudad findById(Ciudad ciudad) {
     Optional<Ciudad> optional = ciudadRepository.findById(ciudad.getId());
@@ -72,14 +72,14 @@ public class CiudadService {
     ciudadRepository.delete(ciudad);
   }
 
-  @Transactional
-  public void deleteById(String id) {
-    Optional<Ciudad> optional = ciudadRepository.findById(id);
-    if (optional.isPresent()) {
-      Ciudad ciudad = optional.get();
-      personaService.deleteFieldCiudad(ciudad);
-      ciudadRepository.delete(ciudad);
-    }
-
-  }
+//  @Transactional
+//  public void deleteById(String id) {
+//    Optional<Ciudad> optional = ciudadRepository.findById(id);
+//    if (optional.isPresent()) {
+//      Ciudad ciudad = optional.get();
+//      personaService.deleteFieldCiudad(ciudad);
+//      ciudadRepository.delete(ciudad);
+//    }
+//
+//  }
 }

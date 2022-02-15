@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CiudadRepository extends JpaRepository<Ciudad, String> {
 
-  @Query("select p from Ciudad p where p.nombre LIKE :q")
-  List<Ciudad> findAll(@Param("q") String q);
+//  @Query("select p from Ciudad p where p.nombre LIKE :q")
+//  List<Ciudad> findAll(@Param("q") String q);
   
 }

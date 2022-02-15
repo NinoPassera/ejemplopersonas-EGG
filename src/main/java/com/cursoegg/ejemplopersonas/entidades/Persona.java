@@ -2,19 +2,16 @@ package com.cursoegg.ejemplopersonas.entidades;
 
 import com.cursoegg.ejemplopersonas.excepciones.Role;
 import java.util.Date;
-import javax.persistence.Basic;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -42,8 +39,8 @@ public class Persona {
  
         
     
-    @ManyToOne
-    private Ciudad ciudad;
+    @OneToMany
+    private List<Ciudad> ciudad;
 
     public String getContraseña() {
         return contraseña;
@@ -93,13 +90,23 @@ public class Persona {
         this.edad = edad;
     }
 
-    public Ciudad getCiudad() {
+    public Date getAlta() {
+        return alta;
+    }
+
+    public void setAlta(Date alta) {
+        this.alta = alta;
+    }
+
+    public List<Ciudad> getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(List<Ciudad> ciudad) {
         this.ciudad = ciudad;
     }
+
+    
 
     /**
      * @return the foto

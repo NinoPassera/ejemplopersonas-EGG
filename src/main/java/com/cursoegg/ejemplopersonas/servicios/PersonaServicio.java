@@ -65,7 +65,7 @@ public class PersonaServicio implements UserDetailsService{
             
         }
         else {
-            persona.setCiudad(ciudadService.findById(persona.getCiudad()));
+            
         }
         
         return persona;
@@ -102,9 +102,9 @@ public class PersonaServicio implements UserDetailsService{
         return personaRepository.findAllByQ("%" + q + "%");
     }
 
-    public List<Persona> listAllbyCiudad(String nombre) {
-        return personaRepository.findAllByCiudad(nombre);
-    }
+//    public List<Persona> listAllbyCiudad(String nombre) {
+//        return personaRepository.findAllByCiudad(nombre);
+//    }
 
     public Persona findById(String id) {
         Optional<Persona> respuesta = personaRepository.findById(id);
@@ -121,14 +121,14 @@ public class PersonaServicio implements UserDetailsService{
         personaRepository.delete(persona);
     }
 
-    @Transactional
-    public void deleteFieldCiudad(Ciudad ciudad) {
-        List<Persona> personas = listAllbyCiudad(ciudad.getNombre());
-        for (Persona persona : personas) {
-            persona.setCiudad(null);
-        }
-        personaRepository.saveAll(personas);
-    }
+//    @Transactional
+//    public void deleteFieldCiudad(Ciudad ciudad) {
+//        List<Persona> personas = listAllbyCiudad(ciudad.getNombre());
+//        for (Persona persona : personas) {
+//            persona.setCiudad(null);
+//        }
+//        personaRepository.saveAll(personas);
+//    }
 
     @Transactional
     public void deleteById(String id) {

@@ -34,13 +34,23 @@
                             <label for="edad" class="form-label">Edad</label>
                             <input type="number" class="form-control" th:field="*{edad}" placeholder="25">
                         </div>
-                        <div class="mb-3">
-                            <label for="ciudad" class="form-label">Ciudad</label>
-                            <select class="form-select" th:field="*{ciudad.id}">
-                                <option th:each="c : ${ciudades}" th:text="${c.nombre}" th:value="${c.id}"></option>
-                            </select>
-                        </div>
-                        
+
+
+                        <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Elija las ciudades correspondientes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each=" c : ${ciudades}" >
+                                    <input type="checkbox" id="cbox2" th:value="${c.id}" th:field="*{ciudad.id}"> <label for="cbox2">Este es mi segundo checkbox</label>
+                                    
+                                </tr>
+                            </tbody>
+                            <p th:if="${ciudades.isEmpty}">No hay ciudades para mostrar</p>
+                        </table>
+
                         <div class="mb-3">
                             <label for="Foto" class="form-label">Edad</label>
                             <input type="file" class="form-control" name="archivo" >

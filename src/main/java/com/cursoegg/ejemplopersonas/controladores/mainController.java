@@ -22,7 +22,7 @@ public class mainController {
     @GetMapping("")
     public String  index(Model model ){
          
-        model.addAttribute("titulo" , "HOla ");
+       
         
         return "index";
         

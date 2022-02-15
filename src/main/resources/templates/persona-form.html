@@ -36,8 +36,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="ciudad" class="form-label">Ciudad</label>
-                            <select class="form-select" th:field="*{ciudad.id}">
-                                <option th:each="c : ${ciudades}" th:text="${c.nombre}" th:value="${c.id}"></option>
+                            <select class="form-select" th:field="*{ciudad}">
+                                <option th:each="c : ${ciudades}" th:text="${c.nombre}" th:value="${c}"></option>
                             </select>
                         </div>
                         

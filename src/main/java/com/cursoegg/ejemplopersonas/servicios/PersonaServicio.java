@@ -64,9 +64,6 @@ public class PersonaServicio implements UserDetailsService{
             throw new WebException(" La contraseña tienen que ser iguales");
             
         }
-        else {
-            persona.setCiudad(ciudadService.findById(persona.getCiudad()));
-        }
         
         return persona;
     }
